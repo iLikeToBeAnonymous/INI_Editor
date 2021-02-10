@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+  </head>
+<body>
+
+<div class="container-fluid">
+<!--   <h3>Text to Save:</h3>
+  <textarea id="textEditBox" cols="80" rows="1"></textarea> -->
+  
+  <div class="shadow p-2 mb-2">
+    <label for="fileSelector">Select a File to Load:</label>
+    <input id="fileSelector" type="file" accept=".ini,.txt"/> <!--https://developer.mozilla.org/en-us/docs/Web/HTML/Element/input/file#multiple -->
+  </div>
+
+<!--   ################################################################ -->
+<!--                         BEGIN FORM FIELDS                          -->
+<!--   ################################################################ -->
+<!--  All fields intended to be a part of the edited file need
+  to be nested under the div id "fieldsToChange" -->
+<form id=fieldsToChange ><div class="row text-right">
+    <div class="col-sm-4 shadow p-2 mb-2">
+      <label for="EmailConfig.SerialNum">SerialNum:</label>
+      <input type="text" id="EmailConfig.SerialNum" placeholder="#########"/><br>
+
+      <label for="EmailConfig.LocationMsg">LocationMsg:</label>
+      <input type="text" id="EmailConfig.LocationMsg" placeholder="#########"/><br>  
+
+  <!--     <label for="NetworkConfig.PLC_IP">PLC_IP:</label>
+      <input type="text" id="NetworkConfig.PLC_IP" placeholder="#########"/>   -->
+
+      <label for="NetworkConfig.PLC_IP">PLC_IP:</label>
+      <!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist-->
+      <input list="ipSelection" id="NetworkConfig.PLC_IP" placeholder="192.168.1.XX"/> <!--The input box-->
+      <!--The options list is tied to the input by the list specified in the input definition-->
+      <datalist id="ipSelection">
+        <option value="192.168.1.67">(1st machine on-site)</option>
+        <option value="192.168.1.77">(2nd machine on-site)</option>
+        <option value="192.168.1.87">(3rd machine on-site)</option>
+        <option value="192.168.1.97">(4th machine on-site)</option>
+      </datalist>
+    </div>
+
+    <div class="col-sm-4 shadow p-2 mb-2">
+      <label for="EmailConfig.To">Email To:</label>
+      <input type="text" id="EmailConfig.To" placeholder="Should be blank"/><br>
+      <label for="EmailConfig.Cc">Email CC:</label>
+      <input type="text" id="EmailConfig.Cc" placeholder="Should be blank"/><br>
+      <label for="EmailConfig.Bcc">Email BCC:</label>
+      <input type="text" id="EmailConfig.Bcc" placeholder="Should be blank"/>
+    </div>
+
+
+    <div class="col-sm-4 shadow p-2 mb-2">
+      <label for="EmailConfig.WaTo1">WaTo1:</label>
+      <input type="text" id="EmailConfig.WaTo1" placeholder="Should be blank"/><br>
+      <label for="EmailConfig.WaTo2">WaTo2:</label>
+      <input type="text" id="EmailConfig.WaTo2" placeholder="Should be blank"/><br>
+      <label for="EmailConfig.WaTo3">WaTo3:</label>
+      <input type="text" id="EmailConfig.WaTo3" placeholder="Should be blank"/><br>
+    </div>
+  </div></form>
+<!--   ################################################################ -->
+<!--                           END FORM FIELDS                          -->
+<!--   ################################################################ -->
+
+  <fieldset>
+    <br><label for="saveName">Filename to Save As:</label>
+    <input type="text" id="saveName" placeholder="Enter filename"/>
+      <button id="saveMyFile" 
+            type="button" class="btn btn-secondary">Save and Download as JSON
+      </button>
+      <button id="saveToIni" 
+        type="button" class="btn btn-success">Save and Download as INI</button>
+  </fieldset>
+</div>
+
+<!-- Below is just to display the full file which was loaded -->
+  <div class="container container-fluid"><div class="row shadow p-2 mb-2">
+    <div id="fileContentDiv" class="col-sm-6 shadow p-2 mb-2"><pre id="file-content"></pre></div>
+    <div id="iniVs" class="col-sm-6 shadow p-2 mb-2"><pre id="file-content"></pre></div>
+  </div></div>
+ 
+</body>
+  <footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="script.js"></script>  
+  </footer>
+</html>
