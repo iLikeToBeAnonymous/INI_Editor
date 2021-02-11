@@ -7,7 +7,8 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "build": "electron-builder"
   },
   "private": true,
   "repository": {
@@ -37,5 +38,11 @@
     }
   },
   "dependencies": {},
-  "config": {}
+  "config": {},
+  "researchComments": [
+    {
+      "link": "https://www.youtube.com/watch?v=MzuQ3_D3MCw",
+      "infoLearned": "Source for manual edits to this file and where to put the 'build' key."
+    }
+  ]
 }
