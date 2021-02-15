@@ -7,8 +7,10 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder",
-    "build": "electron-builder"
+    "build-help": "electron-builder --help",
+    "buildCurrentSys": "electron-builder",
+    "buildWindows": "electron-builder -w",
+    "buildPortableWin": "electron-builder --win"
   },
   "private": true,
   "repository": {
@@ -43,6 +45,10 @@
     {
       "link": "https://www.youtube.com/watch?v=MzuQ3_D3MCw",
       "infoLearned": "Source for manual edits to this file and where to put the 'build' key."
+    },
+    {
+      "note": "the option '--win' in the scripts section is defined by the 'win' key in the 'electron-builder' section.",
+      "note": "the 'win' key is a proper keyword, and it seems you can't replace it with 'foo' and expect it to work right as a parameter."
     }
   ]
 }
