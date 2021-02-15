@@ -10,7 +10,8 @@
     "build-help": "electron-builder --help",
     "buildCurrentSys": "electron-builder",
     "buildWindows": "electron-builder -w",
-    "buildPortableWin": "electron-builder --win"
+    "buildPortableWin": "electron-builder --win",
+    "dist": "electron-builder --win"
   },
   "private": true,
   "repository": {
@@ -29,15 +30,14 @@
     "electron-builder": "^22.9.1"
   },
   "build": {
-    "mac": {
-      "target": "dmg"
-    },
+    "asar": true,
+    "files": ["out"],
     "win": {
-      "target": "portable"
-    },
-    "linux": {
-      "target": "AppImage"
-    }
+      "target": ["portable"]
+      },
+      "portable": {
+        "artifactName": "myPortable.exe"
+      }
   },
   "dependencies": {},
   "config": {},
@@ -47,6 +47,7 @@
       "infoLearned": "Source for manual edits to this file and where to put the 'build' key."
     },
     {
+      "note": "the 'pack' script option just makes a tar-gz of the project. I don't know what the purpose of that is since it's a git repo.",
       "note": "the option '--win' in the scripts section is defined by the 'win' key in the 'electron-builder' section.",
       "note": "the 'win' key is a proper keyword, and it seems you can't replace it with 'foo' and expect it to work right as a parameter."
     }
