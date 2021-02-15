@@ -7,10 +7,16 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "electron-builder --dir",
+<<<<<<< HEAD
     "build-help": "electron-builder --help",
     "buildCurrentSys": "electron-builder",
     "buildWindows": "electron-builder -w",
     "buildPortableWin": "electron-builder --win"
+=======
+    "dist": "electron-builder",
+    "build": "electron-builder",
+    "foo": "electron-builder --windows"
+>>>>>>> 05b327179e2f2a070bfa0aacc01eed58d4dfa4f6
   },
   "private": true,
   "repository": {
