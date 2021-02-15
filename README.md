@@ -10,3 +10,9 @@ It also has some built-in examples of how to turn HTML inputs directly into a fo
 
 1. [To add to an existing project](https://www.electronforge.io/import-existing-project):
    - `npx @electron-forge/cli@latest import`
+   If this doesn't work, you can attempt:
+   
+   ```node
+   npm install -D @electron-forge/cli
+   npx electron-forge import
+   ```
