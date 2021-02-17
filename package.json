@@ -31,10 +31,6 @@
   },
   "build": {
     "asar": true,
-    "files": [
-      "./dist/**/*",
-      "main.js"
-    ],
     "win": {
       "target": [
         "portable"
