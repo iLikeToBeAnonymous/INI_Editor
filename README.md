@@ -3,6 +3,24 @@ Purpose-built INI GUI editor for my needs.
 **Warning:** _This is not a turnkey tool for editing INI files._ <br>It's primarily my playing around with things. 
 It also has some built-in examples of how to turn HTML inputs directly into a formatted JSON file.
 
+#### Using electron forge:
+
+First, make sure electron-forge is installed globally:
+
+```node
+npm install -g electron-forge@latest
+```
+
+Next, install electron-forge as a dev-dependency in your project:
+
+```node
+npm install -D electron-forge@latest
+```
+
+1. [To add to an existing project](https://www.electronforge.io/import-existing-project):
+   - `npx @electron-forge/cli@latest import`
+1. However, that doesn't always work. 
+
 
 ## Building/make
 
