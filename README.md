@@ -6,7 +6,29 @@ It also has some built-in examples of how to turn HTML inputs directly into a fo
 
 ## Building/make
 
-#### Using electron forge:
+### Using electron builder:
 
-1. [To add to an existing project](https://www.electronforge.io/import-existing-project):
-   - `npx @electron-forge/cli@latest import`
+1. Make sure electron builder is installed globally:
+   ```powershell
+   npm install -g electron-builder@latest
+   ```
+
+2. Next, install it as a dev dependency in your project:
+   ```powershell
+   npm install -D electron-builder@latest
+   ```
+
+3. Edit your `package.json` to make it work with electron-builder. According to npmjs.com's [documentation on electron-builder](https://www.npmjs.com/package/electron-builder), you should modify the scripts section to include a `postinstall` script to "make sure your native dependencies are always matched \[to the\] electron version":
+   ```node
+   "postinstall": "electron-builder install-app-deps"
+   ```
+
+4. To the scripts section, add a general build command, which will build according to whatever the native system is (in theory):
+   ```node
+   "dist": "electron-builder"
+   ```
+   
+   > As a side note, you can also make build commands which target specific build actions. For example, to build solely for windows, the build command in the scripts section could be something like:
+   ```node
+   "foo": "electron-builder --win"
+   ```
